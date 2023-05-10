@@ -1,22 +1,25 @@
 #include <stdio.h>
 
-int n;
-printf("How many rows of pyramid do you want? ");
-n = scanf("%d",&n);
-
-int i,j;
-for(i=0;i<n;i++)
+int main()
 {
-    for(j = 1;j<(2*n -1);j++)
+    printf("How many rows of pyramid do you want? ");
+    int n = scanf("%d",&n);
+
+    int i,j;
+    for(i=0;i<n;i++)
     {
-        if(j>=(n-(i-1)) && j<=(n+(i-1)))
+        for(j = 1;j<(2*n -1);j++)
         {
-            printf("*");
+            if(j>=(n-(i-1)) && j<=(n+(i-1)))
+            {
+                printf("*");
+            }
+            else
+            {
+                printf(" ");
+            }
         }
-        else
-        {
-            printf(" ");
-        }
+        printf("\n");
     }
-    printf("\n");
+    return 0;
 }
