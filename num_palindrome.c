@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 
 int main(void)
 {
@@ -7,8 +8,8 @@ int main(void)
     scanf("%d",&n);
     int reversed = 0;
     int i = 1;
-    while (n/Math.pow(10,i) !=0){
-        reversed += (n/(Math.pow(10,i)))* Math.pow(10,i) ;
+    while (n/pow(10,i) !=0){
+        reversed += (n/(pow(10,i)))* pow(10,i) ;
         i++;
     }
     printf("Reversed : %d",reversed);
