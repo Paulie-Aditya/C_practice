@@ -9,7 +9,8 @@ int main(void)
     int reversed = 0;
     int i = 1;
     while (n/pow(10,i) !=0){
-        reversed += (n/(pow(10,i)))* pow(10,i) ;
+        int power = (int)pow(10,i);
+        reversed += (n%power)* power ;
         i++;
     }
     printf("Reversed : %d",reversed);
