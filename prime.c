@@ -2,7 +2,7 @@
 #include <math.h>
 
 int main(void){
-    printf("Enter Number: \n");
+    printf("Enter Number: ");
     int n ;
     scanf("%d",&n);
 
@@ -16,7 +16,7 @@ int main(void){
     }
 
     for(int i = 2;i<=ceil(sqrt(n));i++){
-        if (n%i){
+        if (n%i == 0){
             printf("False");
             return 0;
         }
