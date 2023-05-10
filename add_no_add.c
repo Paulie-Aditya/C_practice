@@ -7,14 +7,24 @@ int main(void){
     int x,y;
     scanf("%d %d",&x,&y);
 
-
-    int result = x;
-    while(y!= 0){
-        x++;
-        y--;
+    if (y>0){
+        while(y!= 0){
+            x++;
+            y--;
+        }
+    }
+    else if (y<0){
+        while(y!=0){
+            x--;
+            y++;
+        }
+    }
+    else if (y==0){
+        x+=0;
     }
 
-    printf("Result is: %d",result);
+
+    printf("Result is: %d",x);
 
     return 0;
 }
