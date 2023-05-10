@@ -6,15 +6,17 @@ int main(void)
     printf("Enter number to check: \n");
     int n;
     scanf("%d",&n);
-    int reversed = 0;
-    int i = 1;
-    while (n/pow(10,i) !=0){
-        int power = (int)pow(10,i);
-        reversed += (n%power)* power ;
-        i++;
+
+    int result = 0,q = n,rem;
+
+    while (q != 0)
+    {
+        rem = q%10;
+        result = result*10 + rem;
+        q = q/10;
     }
-    printf("Reversed : %d",reversed);
-    if(reversed == n)
+
+    if(result == n)
     {
         printf("True");
     }
