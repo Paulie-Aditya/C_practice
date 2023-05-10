@@ -15,13 +15,21 @@ int main(void)
         q /=10;
         count++;
     }
-    int x = count;
-    int result = 0;
-    for (;x>=0;x--)
-    {
-        result += pow(n/(pow(10,x)),count);
-    }
+    int cnt = count, result = 0;
+    q = n;
 
-    printf("%d",result);
+    while(q!=0)
+    {
+        rem = q%10;
+        while(cnt!=0)
+        {
+            mul = mul*rem;
+            cnt--;
+        }
+        result = result+mul;
+        cnt = count;
+        q = q/10;
+        mul=1;
+    }
     return 0;
 }
