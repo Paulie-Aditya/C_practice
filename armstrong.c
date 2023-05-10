@@ -15,7 +15,7 @@ int main(void)
         q /=10;
         count++;
     }
-    int cnt = count, result = 0;
+    int cnt = count, result = 0,mul=1,rem;
     q = n;
 
     while(q!=0)
@@ -30,6 +30,14 @@ int main(void)
         cnt = count;
         q = q/10;
         mul=1;
+    }
+
+
+    if (result == n){
+        printf("True");
+    }
+    else{
+        printf("False");
     }
     return 0;
 }
