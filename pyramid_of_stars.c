@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main()
+int main(void)
 {
     printf("How many rows of pyramid do you want? ");
     int n = scanf("%d",&n);
