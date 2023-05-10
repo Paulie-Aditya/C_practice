@@ -26,5 +26,5 @@ int main(void){
         a = b;
         b = result;
     }
-    printf("%d",result);
+    printf("%d",a);
 }
