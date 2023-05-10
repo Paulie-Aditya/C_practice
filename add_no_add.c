@@ -7,9 +7,10 @@ int main(void){
     int x,y;
     scanf("%d %d",&x,&y);
 
+
     int result = x;
     while(y!= 0){
-        result++;
+        x++;
         y--;
     }
 
