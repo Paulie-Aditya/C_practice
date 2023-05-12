@@ -29,10 +29,29 @@ int main(){
 
         for(i=0;i<brows;i++){
             for(j = 0;j<bcolumns;j++){
-                for(k=0; k<brows ;k++){
-                    sum += a[i][]
-                }
+                scanf("%d", &b[i][j]);
             }
         }
     }
+    printf("\n");
+
+    for(i = 0; i<arows ;i++){
+        for(j=0; j<bcolumns;j++){
+            for(k=0;k<brows;k++){
+                sum += a[i][j] * b[j][k];
+            }
+            product[i][j] = sum;
+            sum = 0;
+        }
+    }
+
+    printf("Resultant Matrix \n");
+    for(i = 0; i<arows; i++){
+        for(j = 0; j<bcolumns; j++){
+            printf("%d",product[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
 }
