@@ -29,7 +29,9 @@ int main(){
 
         for(i=0;i<brows;i++){
             for(j = 0;j<bcolumns;j++){
-                
+                for(k=0; k<brows ;k++){
+                    sum += a[i][]
+                }
             }
         }
     }
