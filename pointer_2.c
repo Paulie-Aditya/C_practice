@@ -1,5 +1,8 @@
 //Finding mid of array using pointers
+
 #include <stdio.h>
+
+
 
 int *findMid(int a[],int n){
     return &a[n/2];
