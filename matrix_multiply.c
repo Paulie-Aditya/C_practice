@@ -25,7 +25,7 @@ int main(){
         printf("Can't multiply the Matrices A and B");
     }
     else{
-        printf("Enter elements of Matrix A: \n");
+        printf("Enter elements of Matrix B: \n");
 
         for(i=0;i<brows;i++){
             for(j = 0;j<bcolumns;j++){
@@ -48,7 +48,7 @@ int main(){
     printf("Resultant Matrix \n");
     for(i = 0; i<arows; i++){
         for(j = 0; j<bcolumns; j++){
-            printf("%d",product[i][j]);
+            printf("%d ",product[i][j]);
         }
         printf("\n");
     }
