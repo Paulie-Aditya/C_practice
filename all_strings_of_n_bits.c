@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-
+// Assume A[0...n-1] is an array of size n
 void binary(int n){
     if(n<1){
         printf("%s",A);
