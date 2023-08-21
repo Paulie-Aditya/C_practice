@@ -14,6 +14,6 @@ void TowerOfHanoi(int n, char fromTower, char toTower, char auxTower){
     TowerOfHanoi(n-1, auxTower, toTower, fromTower);
 }
 int main(void){
-    TowerOfHanoi(4,'A','B','C');
+    TowerOfHanoi(3,'A','B','C');
     return 0;
 }
