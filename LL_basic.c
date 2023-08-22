@@ -97,7 +97,7 @@ int main(void){
     insertAtEnd(head,5);
 
     print(head);
-    //insertAtpos(head, 3,3);
+    insertAtpos(head, 3,3);
     print(head);
     return 0;
 }
