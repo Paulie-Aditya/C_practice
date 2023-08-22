@@ -64,30 +64,31 @@ struct ListNode* insertAtEnd(struct ListNode* head, int data){
 
     return head;
 }
-struct ListNode* insertAtpos(struct ListNode* head, int data, int pos){
-    struct ListNode* newNode;
 
-    newNode = (struct ListNode*)malloc(sizeof(struct ListNode));
-    newNode->data = data;
-    newNode->next = NULL;
+//Inserts a new Node at position n and returns head
+struct ListNode* insertAtGivenPos(struct ListNode* head, struct ListNode *new, int n){
+    struct ListNode* pred = head;
 
-    int count = 0;
-    if(head == NULL){
-        head = newNode;
-        head->next = NULL;
+    //Special Case: adding at position 1
+    if(n<=1){
+        new->next = head;
+        return new;
     }
-    struct ListNode* curr = head;
-    while(curr != NULL){
-        if(count == pos-1){
-            break;
-        }
-        curr = curr->next;
+    //find the n-1 node (predecessor): decrement n and move down the list
+    //until either the list has ended or n becomes 0
+
+    while(--n && pred != NULL){
+        pred = pred->next;
+
     }
-    newNode->next = curr->next;
-    curr->next = newNode;
-
-    return head;
-
+    if(pred == NULL){
+        return NULL;
+    }
+    else{
+        new->next = pred->next;
+        pred->next = new;
+        return head;
+    }
 }
 int main(void){
     struct ListNode* head = &l1;
@@ -95,9 +96,8 @@ int main(void){
     insertAtEnd(head,2);
     insertAtEnd(head,4);
     insertAtEnd(head,5);
+    insertAtBeginning(head,0);
 
-    print(head);
-    insertAtpos(head, 3,3);
     print(head);
     return 0;
 }
