@@ -136,6 +136,7 @@ void *delete(struct ListNode**head, int pos){
             k++;
             q = p;
             p = p->next;
+            
         }
         if(p == NULL){
             prinf("Position doesn't exist.\n");
@@ -148,6 +149,17 @@ void *delete(struct ListNode**head, int pos){
         return;
     }
 }
+void deleteLinkedList(struct ListNode** head){
+    struct ListNode* auxNode,*iterator;
+    iterator = *head;
+    while(iterator){
+        auxNode = iterator->next;
+        free(iterator);
+        iterator = auxNode;
+    }
+    *head = NULL;
+
+}
 int main(void){
     struct ListNode* head = &l1;
     insertAtEnd(head,1);
@@ -157,5 +169,5 @@ int main(void){
     insertAtBeginning(head,0);
 
     print(head);
-    return 0;
+    return 0; 
 }
