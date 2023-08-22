@@ -90,6 +90,64 @@ struct ListNode* insertAtGivenPos(struct ListNode* head, struct ListNode *new, i
         return head;
     }
 }
+
+void *deleteFirst(struct ListNode** head){
+    struct ListNode* temp;
+    if(*head == NULL){
+        return;
+    }
+    temp = *head;
+    *head = (*head)->next;
+    free(temp);
+
+    return;
+}
+
+void *deleteLast(struct ListNode **head){
+    struct ListNode* temp = NULL;
+    struct ListNode* curr = *head;
+    if(*head == NULL){
+        return;
+    }
+    while(curr->next != NULL){
+        temp = curr;
+        curr = curr->next;
+    }
+    temp->next = NULL;
+    free(curr);
+    return;
+
+}
+void *delete(struct ListNode**head, int pos){
+    int k = 1;
+    struct ListNode*p,*q;
+    if(*head == NULL){
+        printf("Empty List");
+        return;
+    }
+    p = *head;
+    if(pos == 1){
+        *head = (*head)->next;
+        free(p);
+        return;
+    }
+    else{
+        while((p!=NULL) && k<pos){
+            k++;
+            q = p;
+            p = p->next;
+        }
+        if(p == NULL){
+            prinf("Position doesn't exist.\n");
+            return;
+        }
+        else{
+            q->next = p->next;
+            free(p);
+        }
+        return;
+    }
+}
 int main(void){
     struct ListNode* head = &l1;
     insertAtEnd(head,1);
