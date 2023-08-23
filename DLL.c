@@ -68,7 +68,7 @@ void insert(struct DLLNode **head, int data, int pos){
         newNode->next = *head;
         newNode->prev = NULL;
 
-        if(*head){
+        if(*head != NULL){
             (*head)->prev = newNode;
         }
         *head = newNode;
@@ -135,17 +135,21 @@ void delete(struct DLLNode**head, int pos){
     }
     if(pos == 1){
         *head = (*head)->next;
-    }
-    if(*head != NULL){
-        (*head)->prev = NULL;
+    
+        if(*head != NULL)
+        {
+            (*head)->prev = NULL;
+        }
         free(temp);
         return;
     }
+    
 
     while(k<pos && temp->next!= NULL){
         temp = temp->next;
         k++;
     }
+    
     if(k<pos-1){
         printf("Desired Position doesn't exist");
         return;
