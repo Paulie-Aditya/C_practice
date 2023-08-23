@@ -31,7 +31,7 @@ void insertAtBegin(struct DLLNode** head, int data){
 }
 // Insertion at End
 void insertAtEnd(struct DLLNode** head, int data){
-    struct DLLNode *curr = head;
+    struct DLLNode *curr = *head;
     struct DLLNode *newNode = (struct DLLNode *)malloc(sizeof(struct DLLNode));
     if(!newNode){
         printf("Memory Error");
